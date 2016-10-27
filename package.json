@@ -1,6 +1,6 @@
 {
-  "name": "angular-universal-render",
-  "version": "0.0.1",
+  "name": "angular2-universal-render",
+  "version": "0.0.1-beta.1",
   "description": "Renderer of Angular application on Node",
   "main": "index.js",
   "scripts": {
