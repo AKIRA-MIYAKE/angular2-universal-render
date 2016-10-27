@@ -4,7 +4,8 @@
   "description": "Renderer of Angular application on Node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example": "webpack --config webpack.config.example.js && node ./example/rendering",
+    "test": "webpack && mocha ./test/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/AKIRA-MIYAKE/angular-universal-render#readme",
   "dependencies": {
     "angular2-universal": "2.1.0-rc.1",
+    "angular2-universal-polyfills": "^2.1.0-rc.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.26"
   },
@@ -31,7 +33,16 @@
     "@angular/platform-browser-dynamic": "2.1.0",
     "@angular/platform-server": "2.1.0",
     "@angular/router": "3.1.0",
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.46",
+    "angular2-template-loader": "^0.5.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^0.9.5",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.6"
+    "typescript": "^2.0.6",
+    "webpack": "^1.13.3"
   }
 }

@@ -1,1 +1,1 @@
-export function createRender() { }
+export * from './lib/create-render';
