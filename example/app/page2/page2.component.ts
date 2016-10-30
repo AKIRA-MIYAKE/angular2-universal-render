@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TestDataService } from '../services/test-data.service';
-import { Cache } from '../universal-cache';
+import { Cache } from '../../../src';
 
 @Component({
   selector: 'app-page2',

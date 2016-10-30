@@ -2,10 +2,11 @@
   "name": "angular2-universal-render",
   "version": "0.0.1-beta.1",
   "description": "Renderer of Angular application on Node",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "webpack",
     "example": "webpack --config webpack.config.example.js && node ./example/rendering",
-    "test": "webpack && mocha ./test/index.js"
+    "test": "webpack --config webpack.config.test.js && mocha --timeout 10000 ./test/index.js"
   },
   "repository": {
     "type": "git",
