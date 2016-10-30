@@ -46,3 +46,4 @@ function createRender(options) {
     };
 }
 exports.createRender = createRender;
+//# sourceMappingURL=create-render.js.map

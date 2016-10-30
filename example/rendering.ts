@@ -28,5 +28,4 @@ render({
     fs.writeSync(fd, html);
     fs.closeSync(fd);
   });
-  
-})
+});

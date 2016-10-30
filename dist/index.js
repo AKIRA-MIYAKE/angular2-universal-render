@@ -4,3 +4,4 @@ function __export(m) {
 }
 __export(require('./lib/create-render'));
 __export(require('./lib/universal-cache'));
+//# sourceMappingURL=index.js.map
