@@ -1,4 +1,4 @@
-# angular2-universal-render
+# angular2-universal-render [![Build Status](https://travis-ci.org/AKIRA-MIYAKE/angular2-universal-render.svg?branch=develop)](https://travis-ci.org/AKIRA-MIYAKE/angular2-universal-render)
 Renderer of Angular application on Node
 
 **caution**  
