@@ -4,21 +4,22 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "mapRoot": "./",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "../dist",
     "sourceMap": true,
     "target": "es5",
-    "lib": ["es6", "dom"],
     "typeRoots": [
-      "./node_modules/@types"
+      "../node_modules/@types"
     ]
   },
+  "include": [
+    "../src/**/*"
+  ],
   "exclude": [
-    "./node_modules",
-    "!./node_modules/@types",
-    "./ng-project/node_modules",
-    "**/*.spec.ts",
-    "**/*.e2e-spec.ts"
+    "../node_modules",
+    "!../node_modules/@types"
   ]
 }

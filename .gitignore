@@ -39,9 +39,8 @@ jspm_packages
 .vscode
 .DS_Store
 
-example/bundle.js
-example/bundle.js.map
-example/rendering.js
-example/rendering.js.map
-test/index.js
-test/index.js.map
+client
+test/rendering/index.js
+test/rendering/index.js.map
+test/unit/index.js
+test/unit/index.js.map
