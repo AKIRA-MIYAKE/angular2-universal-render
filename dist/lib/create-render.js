@@ -46,4 +46,4 @@ function createRender(options) {
     };
 }
 exports.createRender = createRender;
-//# sourceMappingURL=create-render.js.map
+//# sourceMappingURL=/Users/miyake-akira/Documents/Repositories/angular2-universal-render/src/lib/create-render.js.map
