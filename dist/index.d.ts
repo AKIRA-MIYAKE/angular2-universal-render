@@ -56,8 +56,3 @@ declare module 'angular2-universal-render' {
 	}
 
 }
-declare module 'angular2-universal-render' {
-	export * from 'lib/create-render';
-	export * from 'lib/universal-cache';
-
-}
