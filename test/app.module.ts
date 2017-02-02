@@ -32,16 +32,16 @@ import { Page2Component } from '../client/src/app/page2/page2.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
   constructor(public cache: Cache) {}
-  
+
   // we need to use the arrow function here to bind the context as this is a gotcha in Universal for now until it's fixed
-  universalDoDehydrate = (universalCache) => {
+  universalDoDehydrate = (universalCache: { [key: string]: string }) => {
     universalCache['Cache'] = JSON.stringify(this.cache.dehydrate());
   }
-  
+
   universalAfterDehydrate = () => {
     this.cache.clear();
   }
-  
+
 }

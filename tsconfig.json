@@ -4,16 +4,22 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
     "sourceMap": true,
-    "target": "es5",
-    "lib": ["es6", "dom"],
+    "target": "es6",
     "typeRoots": [
       "./node_modules/@types"
     ]
   },
+  "include": [
+    "./src/**/*"
+  ],
   "exclude": [
     "./node_modules",
     "!./node_modules/@types",

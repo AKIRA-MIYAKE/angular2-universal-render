@@ -1,11 +1,12 @@
 {
   "name": "angular2-universal-render",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Renderer of Angular application on Node",
   "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "postinstall": "cd ./ng-project && npm install",
-    "build": "cd src && tsc",
+    "ng-project": "cd ./ng-project && npm install",
+    "build": "tsc && dts-generator --name angular2-universal-render --project ./ --out ./dist/index.d.ts",
     "preexample": "sh test/copy-files.sh",
     "example": "webpack --config ./test/rendering/webpack.config.js && node ./test/rendering/index.js && cd ./test/http && http-server",
     "pretest": "sh test/copy-files.sh",
@@ -23,7 +24,7 @@
   "homepage": "https://github.com/AKIRA-MIYAKE/angular-universal-render#readme",
   "dependencies": {
     "angular2-universal": "2.1.0-rc.1",
-    "angular2-universal-polyfills": "^2.1.0-rc.1",
+    "angular2-universal-polyfills": "2.1.0-rc.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.26"
   },
@@ -42,13 +43,16 @@
     "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.46",
     "angular2-template-loader": "^0.5.0",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
     "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "dts-generator": "^2.0.0",
     "http-server": "^0.9.0",
     "mocha": "^3.1.2",
     "raw-loader": "^0.5.1",
-    "ts-loader": "^0.9.5",
+    "to-string-loader": "^1.1.5",
     "tslint": "^3.15.1",
     "typescript": "2.0.6",
-    "webpack": "^1.13.3"
+    "webpack": "https://github.com/webpack/webpack/archive/v2.2.0.tar.gz"
   }
 }
