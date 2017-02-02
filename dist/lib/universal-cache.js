@@ -11,11 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-const core_1 = require('@angular/core');
+var core_1 = require('@angular/core');
 function rehydrateCache(defaultValue) {
-    const win = window;
+    var win = window;
     if (win['UNIVERSAL_CACHE'] && win['UNIVERSAL_CACHE']['Cache']) {
-        let serverCache = defaultValue;
+        var serverCache = defaultValue;
         try {
             serverCache = JSON.parse(win['UNIVERSAL_CACHE']['Cache']);
             if (typeof serverCache !== typeof defaultValue) {
@@ -30,48 +30,52 @@ function rehydrateCache(defaultValue) {
     return defaultValue;
 }
 exports.rehydrateCache = rehydrateCache;
-let Cache = class Cache {
-    constructor(isBrowser) {
+var Cache = (function () {
+    function Cache(isBrowser) {
         this._cache = {};
         if (isBrowser) {
-            let serverCache = rehydrateCache(this._cache);
+            var serverCache = rehydrateCache(this._cache);
             this.rehydrate(serverCache);
         }
     }
-    has(key) {
+    Cache.prototype.has = function (key) {
         return this._cache[key];
-    }
-    set(key, value) {
+    };
+    Cache.prototype.set = function (key, value) {
         this._cache[key] = value;
-    }
-    get(key) {
+    };
+    Cache.prototype.get = function (key) {
         return this._cache[key];
-    }
-    clear() {
-        Object.keys(this._cache).forEach((key) => {
-            delete this._cache[key];
+    };
+    Cache.prototype.clear = function () {
+        var _this = this;
+        Object.keys(this._cache).forEach(function (key) {
+            delete _this._cache[key];
         });
-    }
-    dehydrate() {
-        let json = {};
-        Object.keys(this._cache).forEach((key) => {
-            json[key] = this._cache[key];
+    };
+    Cache.prototype.dehydrate = function () {
+        var _this = this;
+        var json = {};
+        Object.keys(this._cache).forEach(function (key) {
+            json[key] = _this._cache[key];
         });
         return json;
-    }
-    rehydrate(json) {
-        Object.keys(json).forEach((key) => {
-            this._cache[key] = json[key];
+    };
+    Cache.prototype.rehydrate = function (json) {
+        var _this = this;
+        Object.keys(json).forEach(function (key) {
+            _this._cache[key] = json[key];
         });
-    }
-    toJSON() {
+    };
+    Cache.prototype.toJSON = function () {
         return this.dehydrate();
-    }
-};
-Cache = __decorate([
-    core_1.Injectable(),
-    __param(0, core_1.Inject('isBrowser')), 
-    __metadata('design:paramtypes', [Boolean])
-], Cache);
+    };
+    Cache = __decorate([
+        core_1.Injectable(),
+        __param(0, core_1.Inject('isBrowser')), 
+        __metadata('design:paramtypes', [Boolean])
+    ], Cache);
+    return Cache;
+}());
 exports.Cache = Cache;
 //# sourceMappingURL=universal-cache.js.map
