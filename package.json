@@ -1,11 +1,11 @@
 {
   "name": "angular2-universal-render",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Renderer of Angular application on Node",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "postinstall": "cd ./ng-project && npm install",
+    "ng-project": "cd ./ng-project && npm install",
     "build": "tsc && dts-generator --name angular2-universal-render --project ./ --out ./dist/index.d.ts",
     "preexample": "sh test/copy-files.sh",
     "example": "webpack --config ./test/rendering/webpack.config.js && node ./test/rendering/index.js && cd ./test/http && http-server",
