@@ -73,6 +73,8 @@ export function createRender(options: CreateRenderOptions =  {}): (config: Unive
       throw new Error('Please provide the request url as requestUrl');
     }
 
+    config.id = _options.id();
+
     const _data = Object.assign({}, _options, config);
 
     const zone = Zone.current.fork({

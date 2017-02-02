@@ -75760,6 +75760,7 @@ function createRender(options) {
         if (!config.requestUrl) {
             throw new Error('Please provide the request url as requestUrl');
         }
+        config.id = _options.id();
         var _data = Object.assign({}, _options, config);
         var zone = Zone.current.fork({
             name: 'UNIVERSAL render',
