@@ -4,4 +4,4 @@ function __export(m) {
 }
 __export(require('./lib/create-render'));
 __export(require('./lib/universal-cache'));
-//# sourceMappingURL=/Users/miyake-akira/Documents/Repositories/angular2-universal-render/src/index.js.map
+//# sourceMappingURL=index.js.map

@@ -75725,16 +75725,19 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_universal_node___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_universal_node__);
 /* unused harmony export createRender */
 
+function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString().substring(1);
+}
 function createRender(options) {
-    options = options || {};
+    if (options === void 0) { options = {}; }
     var _options = {
         document: '',
-        cancelHandler: function () { return false; },
-        time: false,
-        id: null,
-        ngModule: null,
         precompile: true,
-        cancel: false,
+        time: true,
+        id: function () { return s4(); },
+        platform: function (providers) { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_angular2_universal_node__["platformUniversalDynamic"])(providers); },
+        providers: [],
+        ngModule: null,
         originUrl: 'localhost',
         baseUrl: '/'
     };
@@ -75745,10 +75748,11 @@ function createRender(options) {
     _options.ngModule = ('ngModule' in options) ? options.ngModule : _options.ngModule;
     _options.originUrl = ('originUrl' in options) ? options.originUrl : _options.originUrl;
     _options.baseUrl = ('baseUrl' in options) ? options.baseUrl : _options.baseUrl;
-    var __providers = ('providers' in options) ? options.providers : [];
-    var platformRef = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_angular2_universal_node__["platformUniversalDynamic"])(__providers);
+    var __platform = ('platform' in options) ? options.platform : _options.platform;
+    var __providers = options.providers || _options.providers;
+    var platformRef = __platform(__providers);
     return function universalRender(config) {
-        if (config === void 0) { config = { ngModule: _options.ngModule }; }
+        if (config === void 0) { config = { document: _options.document, ngModule: _options.ngModule }; }
         var ngModule = config.ngModule || _options.ngModule;
         if (!ngModule) {
             throw new Error('Please provide your main module as ngModule');
@@ -75757,17 +75761,13 @@ function createRender(options) {
             throw new Error('Please provide the request url as requestUrl');
         }
         var _data = Object.assign({}, _options, config);
-        _data.DOCUMENT = _data.document;
         var zone = Zone.current.fork({
             name: 'UNIVERSAL render',
             properties: _data
         });
-        return zone.run(function () {
-            if (_options.precompile) {
-                return platformRef.serializeModule(ngModule, _data);
-            }
-            return platformRef.serializeModuleFactory(ngModule, _data);
-        });
+        return zone.run(function () { return (_options.precompile ?
+            platformRef.serializeModule(ngModule, _data) :
+            platformRef.serializeModuleFactory(ngModule, _data)); });
     };
 }
 
